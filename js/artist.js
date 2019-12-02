@@ -4,13 +4,13 @@ if (token) {
 }
 
 
-var todos = document.querySelectorAll("input[type=checkbox]");
-// todo-list
+var s = document.querySelectorAll("input[type=checkbox]");
+// Artists-list
 
 
-function loadTodos() {
+function loadArtists() {
   $.ajax({
-    url: 'https://exfintoraya.herokuapp.com/todos',
+    url: 'https://exfintoraya.herokuapp.com/artists',
     headers: {
         'Content-Type':'application/json',
         'Authorization': 'Bearer ' + token
@@ -24,10 +24,10 @@ function loadTodos() {
         // aqui va su código para agregar los elementos de la lista
         console.log(data[i].description)
         // algo asi:
-        // addTodo(data[i]._id, data[i].description, data[i].completed)
-        let newHTML = `<li><input type="checkbox" name="todo" value="0"><span> ${data[i].description} </span></li>`
+        // addArtist(data[i]._id, data[i].description, data[i].completed)
+        let newHTML = `<li><input  name="artist" value="0"><span> ${data[i].description} </span></li>`
 
-        $("#todo-list").append(newHTML)
+        $("#artist-list").append(newHTML)
       }
     },
     error: function(error_msg) {
@@ -36,7 +36,7 @@ function loadTodos() {
   });//aaa
 }
 
-loadTodos()
+loadArtists()
 
 
 // o con jquery
@@ -47,7 +47,7 @@ loadTodos()
 //     }
 // });
 
-var input = document.querySelector("input[name=newitem]");
+var input = document.querySelector("input[name=newartist]");
 
 input.addEventListener('keypress', function (event) {
   if (event.charCode === 13) {
@@ -56,7 +56,7 @@ input.addEventListener('keypress', function (event) {
     };
     json_to_send = JSON.stringify(json_to_send);
     $.ajax({
-      url: 'http://localhost:3000/artist.js',
+      url: 'http://localhost:3000/artist',
       url: 'https://exfintoraya.herokuapp.com/artist',
       headers: {
           'Content-Type':'application/json',
@@ -67,9 +67,9 @@ input.addEventListener('keypress', function (event) {
       data: json_to_send,
       success: function(data){
         console.log(data)
-        // agregar código aqui para poner los datos del todolist en el el html
+        // agregar código aqui para poner los datos del Artistslist en el el html
         //ASD
-        let newHTML = `<li><input type="text" name="todo" value="0"><span> ${data.description} </span></li>`
+        let newHTML = `<li><input type="text" name="artist" value="0"><span> ${data.description} </span></li>`
 
         $("#artist-list").append(newHTML)
 
