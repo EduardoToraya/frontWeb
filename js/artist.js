@@ -25,7 +25,7 @@ function loadArtists() {
         console.log(data[i].name)
         // algo asi:
         // addArtist(data[i]._id, data[i].description, data[i].completed)
-        let newHTML = `<li><input  name="artist" value="2"><span> ${data[i].name} </span></li>`
+        let newHTML = `<li><span> ${data[i].name} </span></li>`
 
         $("#artist-list").append(newHTML)
       }
