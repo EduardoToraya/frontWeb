@@ -25,7 +25,7 @@ function loadArtists() {
         console.log(data[i].name)
         // algo asi:
         // addArtist(data[i]._id, data[i].description, data[i].completed)
-        let newHTML = `<li><input  name="artist" value="0"><span> ${data[i].name} </span></li>`
+        let newHTML = `<ul><input  name="artist" value="0"><span> ${data[i].name} </span></ul>`
 
         $("#artist-list").append(newHTML)
       }
@@ -69,7 +69,7 @@ input.addEventListener('keypress', function (event) {
         console.log(data)
         // agregar código aqui para poner los datos del Artistslist en el el html
         //ASD
-        let newHTML = `<li><input type="text" name="artist" value="0"><span> ${data.name} </span></li>`
+        let newHTML = `<ul><input type="text" name="artist" value="0"><span> ${data.name} </span></ul>`
 
         $("#artist-list").append(newHTML)
 
