@@ -69,7 +69,7 @@ input.addEventListener('keypress', function (event) {
         console.log(data)
         // agregar código aqui para poner los datos del Artistslist en el el html
         //ASD
-        let newHTML = `<li><input name="artist" value="2"><span> ${input.value} </span></li>`
+        let newHTML = `<li><span> ${input.value} </span></li>`
 
         $("#artist-list").append(newHTML)
 
@@ -78,7 +78,7 @@ input.addEventListener('keypress', function (event) {
         alert((error_msg['responseText']));
       }
     });
-    input.value = '';
+    //input.value = '';
   }
 })
 
