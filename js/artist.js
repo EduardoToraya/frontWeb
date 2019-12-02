@@ -89,3 +89,30 @@ $('#create-playlist').on('click', function(){
 $("#logout-button").on("click", function(){
   window.location = "./index.html"
 })
+
+
+logoutBtn = document.getElementById("logout-button");
+
+
+logoutBtn.onclick = function () {
+  $.ajax({
+    https://tuneat.herokuapp.com/logout,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    },
+    method: 'POST',
+    dataType: 'json',
+    success: function (data) {
+      // agregar código aqui para poner los datos del todolist en el el html
+      addArtista(data._id, data.name)
+
+    },
+    error: function (error_msg) {
+      alert((error_msg['responseText']));
+    }
+  });
+
+  localStorage.removeItem('token');
+  window.location = './index.html'
+}
