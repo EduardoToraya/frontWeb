@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/EduardoToraya/frontWeb/issues"
   },
-  "homepage": "https://github.com/EduardoToraya/frontWeb#readme"
+  "homepage": "https://github.com/EduardoToraya/frontWeb#readme",
+  "dependencies": {
+    "cors": "^2.8.5"
+  }
 }
