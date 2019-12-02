@@ -4,7 +4,7 @@ if (token) {
 }
 
 
-var s = document.querySelectorAll("input[type=checkbox]");
+var artists = document.querySelectorAll("input[type=checkbox]");
 // Artists-list
 
 
@@ -25,7 +25,7 @@ function loadArtists() {
         console.log(data[i].name)
         // algo asi:
         // addArtist(data[i]._id, data[i].description, data[i].completed)
-        let newHTML = `<li><span> ${data[i].name} </span></li>`
+        let newHTML = `<li><input type = "checkbox" name = "artist" value = "2"><span> ${data[i].name} </span></li>`
 
         $("#artist-list").append(newHTML)
       }
@@ -69,7 +69,7 @@ input.addEventListener('keypress', function (event) {
         console.log(data)
         // agregar código aqui para poner los datos del Artistslist en el el html
         //ASD
-        let newHTML = `<li><span> ${input.value} </span></li>`
+        let newHTML = `<li><input type = "checkbox" name = "artist" value = "2"><span> ${input.value} </span></li>`
 
         $("#artist-list").append(newHTML)
 
