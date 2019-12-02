@@ -47,7 +47,7 @@ loadArtists()
 //     }
 // });
 
-var input = document.querySelector("input[name=newartist]");
+var input = document.querySelector("input[name=new-artist]");
 
 input.addEventListener('keypress', function (event) {
   if (event.charCode === 13) {
@@ -56,8 +56,8 @@ input.addEventListener('keypress', function (event) {
     };
     json_to_send = JSON.stringify(json_to_send);
     $.ajax({
-      url: 'http://localhost:3000/artist',
-      url: 'https://exfintoraya.herokuapp.com/artist',
+      //url: 'http://localhost:3000/artists',
+      url: 'https://tuneat.herokuapp.com/artists',
       headers: {
           'Content-Type':'application/json',
           'Authorization': 'Bearer ' + token
@@ -69,7 +69,7 @@ input.addEventListener('keypress', function (event) {
         console.log(data)
         // agregar código aqui para poner los datos del Artistslist en el el html
         //ASD
-        let newHTML = `<ul><input type="text" name="artist" value="0"><span> ${data.name} </span></ul>`
+        let newHTML = `<ul><input type="text" name="artist" value="0"><span> ${input.value} </span></ul>`
 
         $("#artist-list").append(newHTML)
 
