@@ -11,7 +11,7 @@ $('#login_button').on('click', function(){
   json_to_send = JSON.stringify(json_to_send)
   console.log(json_to_send)
   $.ajax({
-    url: 'https://exfintoraya.herokuapp.com/login',
+    url: 'https://tuneat.herokuapp.com/login',
     headers: {
         'Content-Type':'application/json'
     },
