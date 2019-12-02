@@ -10,7 +10,7 @@ var s = document.querySelectorAll("input[type=checkbox]");
 
 function loadArtists() {
   $.ajax({
-    url: 'https://exfintoraya.herokuapp.com/artists',
+    url: 'https://frontwebtec.herokuapp.com/artists',
     headers: {
         'Content-Type':'application/json',
         'Authorization': 'Bearer ' + token
@@ -22,10 +22,10 @@ function loadArtists() {
 
       for( let i = 0; i < data.length; i++) {
         // aqui va su código para agregar los elementos de la lista
-        console.log(data[i].description)
+        console.log(data[i].name)
         // algo asi:
         // addArtist(data[i]._id, data[i].description, data[i].completed)
-        let newHTML = `<li><input  name="artist" value="0"><span> ${data[i].description} </span></li>`
+        let newHTML = `<li><input  name="artist" value="0"><span> ${data[i].name} </span></li>`
 
         $("#artist-list").append(newHTML)
       }
@@ -52,7 +52,7 @@ var input = document.querySelector("input[name=newartist]");
 input.addEventListener('keypress', function (event) {
   if (event.charCode === 13) {
     json_to_send = {
-      "description" : input.value
+      "name" : input.value
     };
     json_to_send = JSON.stringify(json_to_send);
     $.ajax({
@@ -69,7 +69,7 @@ input.addEventListener('keypress', function (event) {
         console.log(data)
         // agregar código aqui para poner los datos del Artistslist en el el html
         //ASD
-        let newHTML = `<li><input type="text" name="artist" value="0"><span> ${data.description} </span></li>`
+        let newHTML = `<li><input type="text" name="artist" value="0"><span> ${data.name} </span></li>`
 
         $("#artist-list").append(newHTML)
 
