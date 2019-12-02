@@ -56,8 +56,8 @@ input.addEventListener('keypress', function (event) {
     };
     json_to_send = JSON.stringify(json_to_send);
     $.ajax({
-      url: 'http://localhost:3000/todos',
-      url: 'https://exfintoraya.herokuapp.com/todos',
+      url: 'http://localhost:3000/artist.js',
+      url: 'https://exfintoraya.herokuapp.com/artist',
       headers: {
           'Content-Type':'application/json',
           'Authorization': 'Bearer ' + token
@@ -71,7 +71,7 @@ input.addEventListener('keypress', function (event) {
         //ASD
         let newHTML = `<li><input type="text" name="todo" value="0"><span> ${data.description} </span></li>`
 
-        $("#todo-list").append(newHTML)
+        $("#artist-list").append(newHTML)
 
       },
       error: function(error_msg) {
@@ -84,4 +84,8 @@ input.addEventListener('keypress', function (event) {
 
 $('#create-playlist').on('click', function(){
   window.location = './playlist.html'
+})
+
+$("#logout-button").on("click", function(){
+  window.location = "./index.html"
 })
